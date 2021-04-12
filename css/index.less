@@ -1,0 +1,382 @@
+@color1: #cd131f; //主题色
+@font1: #de0c17; //查看更多
+@font2: #7c7c7c; //二级字体色
+@font3: #3e3e3e;
+@font4: #d9d4d4;
+
+.circle {
+  margin: auto;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid @font1;
+}
+
+.pc-support-icon i {
+  font-size: 75px;
+  color: white;
+}
+
+.infotitle-block {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  .infotitle-left {
+    display: inline;
+    color: @font1;
+    font-size: 110px;
+  }
+  .infotitle-middle {
+    width: 100%;
+    padding: 0 10px;
+    p {
+      position: relative;
+      font-size: 45px;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 2px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid @font4;
+    }
+    p::before,
+    p::after {
+      content: " ";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 12px;
+      right: 27px;
+      border: 11px solid transparent;
+      border-right-color: @font1;
+    }
+    p::after {
+      top: 15px;
+      border: 8px solid transparent;
+      border-right-color: white;
+    }
+    .middle-left {
+      line-height: 45px;
+      color: @font1;
+      font-size: 30px;
+    }
+    .middle-right {
+      float: right;
+      line-height: 45px;
+      color: @font3;
+      font-size: 22px;
+    }
+  }
+  .infotitle-right {
+    width: 10%;
+    position: relative;
+    height: 65px;
+    margin: auto;
+    border-right: 3px solid @font1;
+    border-top: 3px solid @font1;
+    border-bottom: 3px solid @font1;
+  }
+  .infotitle-right::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: -45px;
+    top: -3px;
+    background: @font1;
+  }
+}
+
+main {
+  #index-banner {
+    width: 100%;
+    height: 760px;
+  }
+
+  .tubiao-container {
+    width: 100%;
+    padding-top: 40px;
+    .main-center {
+      display: flex;
+      justify-content: space-between;
+      .support-block {
+        width: 20%;
+        transition: 0.5s;
+        .block-top {
+          width: 100%;
+          padding: 0 0 20px 0;
+        }
+        .block-bottom {
+          padding: 0 20px;
+          .item-title {
+            line-height: 32px;
+            font-size: 20px;
+            color: @font1;
+            text-align: center;
+          }
+          .item-content {
+            color: @font3;
+            line-height: 28px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .jbzs-container {
+    width: 100%;
+    padding-top: 80px;
+    .main-center {
+      .jbzs-title ul {
+        padding-top: 80px;
+        display: flex;
+        width: 100%;
+        li {
+          font-size: 20px;
+          color: @font1;
+          transition: ease 0.3s;
+          padding: 15px 20px;
+          margin-right: 20px;
+          border-radius: 10px;
+          border: 1px solid @font1;
+        }
+        li:hover {
+          color: white;
+          background: @font1;
+        }
+        .jbzs-active {
+          color: white;
+          background: @font1;
+        }
+      }
+      .jbzs-block {
+        padding-top: 40px;
+        .jbzs-imgblock {
+          width: 100%;
+          justify-content: space-between;
+          .jbzs-imgitem {
+            float: left;
+            width: 19%;
+            margin-right: 1.25%;
+            height: 230px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            position: relative;
+            background: #ebebeb;
+            &:nth-of-type(5n) {
+              margin-right: 0;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            .jbzs-itemmask {
+              width: 100%;
+              height: 100%;
+              top: 30px;
+              display: flex;
+              opacity: 0;
+              transition: ease 0.3s;
+              position: absolute;
+              background: rgba(0, 0, 0, 0.5);
+              .jbzs-maskcontent {
+                width: 100%;
+                margin: auto;
+                p {
+                  text-align: center;
+                  color: white;
+                  padding: 10px;
+                  font-size: 18px;
+                }
+              }
+            }
+            .jbzs-itemmask::before {
+              content: " ";
+              position: absolute;
+              width: 0;
+              height: 0;
+              top: -14px;
+              left: -14px;
+              border: 15px solid transparent;
+              border-right-color: @font1;
+              transform: rotate(45deg);
+            }
+          }
+          .jbzs-imgitem:hover {
+            .jbzs-itemmask {
+              opacity: 1;
+              transform: translateY(-30px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ptjs-container {
+    width: 100%;
+    height: 900px;
+    margin-top: 120px;
+    background: @color1;
+    position: relative;
+    .main-center {
+      position: absolute;
+      left: 50%;
+      display: flex;
+      transform: translateX(-50%);
+      z-index: 222;
+      width: 100%;
+      .ptjs-left {
+        width: 40%;
+        overflow: hidden;
+        background: #ebebeb;
+        .ptjs-leftitem {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .ptjs-right {
+        width: 60%;
+        padding: 0 0 0 40px;
+        .ptout-title {
+          font-size: 30px;
+        }
+        .ptsecond-title {
+          margin-top: 140px;
+          color: white;
+          p {
+            font-size: 38px;
+          }
+          span {
+            line-height: 50px;
+          }
+        }
+        .ptjs-block {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 40px;
+          .ptjs-item {
+            width: 100%;
+            display: flex;
+            transition: ease 0.3s;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border: 1px solid white;
+            .ptjs-itemLeft {
+              width: 20%;
+              height: 100%;
+              display: flex;
+              i{
+                margin: auto;
+                font-size: 60px;
+                color: white;
+              }
+            }
+            .ptjs-itemRight {
+              width: 80%;
+              padding-left: 30px;
+              p {
+                font-size: 22px;
+                padding: 10px 0;
+                color: white;
+                letter-spacing: 1px;
+              }
+              span {
+                color: white;
+                font-size: 18px;
+                line-height: 32px;
+              }
+            }
+          }
+          .ptjs-itemActive {
+            background: white;
+            .ptjs-itemLeft i{
+              color: @font1;
+            }
+            p {
+              color: @font3 !important;
+            }
+            span {
+              color: @font2 !important;
+            }
+          }
+          .ptjs-item:hover {
+            background: white;
+            .ptjs-itemLeft i{
+              color: @font1;
+            }
+            p {
+              color: @font3;
+            }
+            span {
+              color: @font2;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ptjs-container::before {
+    content: " ";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-top: 200px solid white;
+    z-index: 111;
+  }
+  .ptjs-container::after {
+    content: " ";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 200px solid white;
+    z-index: 111;
+  }
+
+  .activity-container {
+    width: 100%;
+    padding: 80px 0;
+    .activity-block {
+      width: 100%;
+      height: 500px;
+      padding-top: 80px;
+        .activity-img{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .activity-content{
+            width: 100%;
+            height: 20%;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.5);
+            p{
+                font-size: 20px;
+                color: white;
+            }   
+        }
+    }
+  }
+}
